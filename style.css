@@ -7,6 +7,9 @@
   --cyan-dim: #1D7A96;
   --cyan-faint: rgba(76, 224, 255, .14);
   --amber: #FFB454;
+  --orange: #FF5E2E;
+  --orange-dim: #B33D1B;
+  --orange-faint: rgba(255, 94, 46, .14);
   --red: #FF4655;
   --white: #EAF6FF;
   --ink: #9FC3D6;
@@ -196,7 +199,12 @@ button { font: inherit; }
   border: 1px solid var(--cyan);
 }
 .button:hover { transform: translateY(-2px); box-shadow: 0 0 20px rgba(76,224,255,.35); }
-.button-dark { background: var(--cyan-faint); color: var(--cyan); }
+.button-dark {
+  background: var(--orange);
+  color: var(--bg);
+  border-color: var(--orange);
+}
+.button-dark:hover { box-shadow: 0 0 24px rgba(255,94,46,.5); }
 .text-link {
   font-family: "Space Mono", monospace;
   font-size: .72rem;
@@ -233,11 +241,11 @@ button { font: inherit; }
 }
 .quote-mark {
   display: block;
-  color: var(--amber);
+  color: var(--orange);
   font-size: 3.6rem;
   line-height: .7;
   font-family: "Orbitron", serif;
-  text-shadow: 0 0 16px rgba(255,180,84,.4);
+  text-shadow: 0 0 16px rgba(255,94,46,.4);
 }
 .hero-statement p {
   font-size: 1.3rem;
@@ -498,11 +506,12 @@ button { font: inherit; }
   position: relative;
 }
 .skill-number {
-  color: var(--amber);
+  color: var(--cyan);
   font-family: "Space Mono", monospace;
   font-size: .62rem;
   letter-spacing: .1em;
 }
+.skill-block:nth-child(even) .skill-number { color: var(--orange); }
 .skill-block h3 {
   font-family: "Orbitron", sans-serif;
   font-size: 1.2rem;
@@ -555,6 +564,7 @@ button { font: inherit; }
   transition: box-shadow .25s ease, border-color .25s ease;
 }
 .mod-card:hover { border-color: var(--cyan); box-shadow: 0 0 22px rgba(76,224,255,.18); }
+.mod-card:nth-child(even):hover { border-color: var(--orange); box-shadow: 0 0 22px rgba(255,94,46,.2); }
 .mod-top {
   display: flex;
   align-items: center;
@@ -565,7 +575,12 @@ button { font: inherit; }
   font-family: "Space Mono", monospace;
   font-size: .58rem;
   letter-spacing: .1em;
-  color: var(--amber);
+  color: var(--cyan);
+}
+.mod-card:nth-child(even) .mod-code { color: var(--orange); }
+.mod-card:nth-child(even) .status-dot {
+  background: var(--orange);
+  box-shadow: 0 0 8px var(--orange), 0 0 2px var(--orange);
 }
 .mod-card h3 {
   font-family: "Orbitron", sans-serif;
@@ -587,6 +602,10 @@ button { font: inherit; }
   width: 100%;
   background: var(--cyan);
   box-shadow: 0 0 8px var(--cyan);
+}
+.mod-card:nth-child(even) .mod-bar span {
+  background: var(--orange);
+  box-shadow: 0 0 8px var(--orange);
 }
 .mod-meta {
   display: flex;
@@ -619,7 +638,7 @@ button { font: inherit; }
 }
 .contact-inner { max-width: var(--max); }
 .contact-inner .eyebrow { color: var(--cyan); }
-.contact-inner h2 span { color: var(--amber); text-shadow: 0 0 18px rgba(255,180,84,.4); }
+.contact-inner h2 span { color: var(--orange); text-shadow: 0 0 18px rgba(255,94,46,.45); }
 .contact-copy { max-width: 560px; margin: 32px 0; color: var(--ink); }
 .email-link {
   display: inline-flex;
