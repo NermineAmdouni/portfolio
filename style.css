@@ -874,471 +874,271 @@ button {
 
 
 /* ============================================================
-   PROJECT FEATURE
+   PROJECTS — JARVIS HUD
 ============================================================ */
 
 .project-feature {
-  background: var(--panel);
-
-  border:
-    1px solid var(--line);
-
-  min-height: 460px;
-
-  padding: 48px;
-
-  display: grid;
-
-  grid-template-columns:
-    60px
-    1fr
-    360px;
-
-  gap: 30px;
-
-  align-items: center;
-
   position: relative;
-
-  box-shadow:
-    inset 0 0 50px rgba(76, 224, 255, .025);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(400px, .9fr);
+  gap: 46px;
+  align-items: center;
+  min-height: 430px;
+  padding: 42px 44px;
+  background: linear-gradient(145deg, rgba(11, 20, 32, .98), rgba(5, 10, 18, .98));
+  border: 1px solid var(--line);
+  box-shadow: inset 0 0 50px rgba(76, 224, 255, .025);
 }
 
-.project-index {
-  align-self: start;
-
+.project-feature-index {
+  position: absolute;
+  top: 18px;
+  left: 22px;
   font-family: "Space Mono", monospace;
-
+  font-size: .62rem;
   color: var(--amber);
-
-  font-size: .7rem;
+  letter-spacing: .08em;
 }
 
-.project-content {
-  max-width: 620px;
-}
+.project-content { min-width: 0; max-width: 650px; padding-left: 4px; }
 
 .project-kicker {
+  margin: 0 0 13px;
   color: var(--amber);
-
   font-family: "Space Mono", monospace;
-
-  font-size: .64rem;
-
+  font-size: .62rem;
   letter-spacing: .14em;
 }
 
 .project-content h3 {
-  margin: 10px 0 22px;
-
+  margin: 0 0 20px;
   font-family: "Orbitron", sans-serif;
-
-  font-size:
-    clamp(1.5rem, 2.8vw, 2.3rem);
-
-  line-height: 1.2;
-
+  font-size: clamp(1.65rem, 2.7vw, 2.35rem);
+  line-height: 1.15;
   font-weight: 700;
-
   color: var(--white);
 }
 
 .project-content > p:not(.project-kicker) {
-  max-width: 560px;
-
-  margin-bottom: 24px;
-
+  max-width: 590px;
+  margin: 0 0 23px;
   color: var(--ink);
+  line-height: 1.65;
 }
 
 .project-links {
   display: flex;
-
   gap: 22px;
-
   flex-wrap: wrap;
-
-  margin-top: 24px;
+  margin-top: 22px;
 }
 
 .project-link {
   font-family: "Space Mono", monospace;
-
-  font-size: .66rem;
-
+  font-size: .62rem;
   letter-spacing: .04em;
-
   color: var(--cyan);
-
-  border-bottom:
-    1px solid var(--cyan-dim);
-
-  padding-bottom: 2px;
+  border-bottom: 1px solid var(--cyan-dim);
+  padding-bottom: 3px;
+  cursor: pointer;
 }
 
-.project-link:hover {
-  color: var(--amber);
+.project-link:hover { color: var(--amber); border-color: var(--amber); }
 
-  border-color: var(--amber);
-}
-
-
-/* ============================================================
-   PROJECT MEDIA FRAME
-============================================================ */
+.project-media { min-width: 0; width: 100%; }
 
 .tv-frame {
-  background: var(--bg);
-
-  border:
-    1px solid var(--line);
-
+  width: 100%;
+  min-width: 0;
   padding: 4px;
-
-  box-shadow:
-    inset 0 0 25px rgba(76, 224, 255, .03);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  box-shadow: inset 0 0 25px rgba(76, 224, 255, .03);
 }
 
 .tv-screen {
   position: relative;
-
-  aspect-ratio: 4 / 3;
-
+  width: 100%;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
-
-  background:
-    linear-gradient(
-      160deg,
-      rgba(76, 224, 255, .10),
-      rgba(76, 224, 255, .02)
-    ),
-    var(--bg-2);
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
+  background: linear-gradient(160deg, rgba(76, 224, 255, .10), rgba(76, 224, 255, .02)), var(--bg-2);
 }
 
-
-/* ============================================================
-   ACTUAL MEDIA
-============================================================ */
-
-.media-screen img {
-  width: 100%;
-  height: 100%;
-
-  display: block;
-
-  /*
-    PMBOK is a UI screenshot.
-    Contain keeps the complete interface visible.
-  */
-
-  object-fit: contain;
-
-  background: #05070d;
-}
-
+.media-screen img,
 .media-screen video {
+  display: block;
   width: 100%;
   height: 100%;
-
-  display: block;
-
-  /*
-    Video fills the HUD display.
-  */
-
-  object-fit: cover;
-
+  object-fit: contain;
+  object-position: center;
   background: #05070d;
 }
-
-
-/* ============================================================
-   MEDIA HUD OVERLAY
-============================================================ */
 
 .media-screen::after {
   content: "";
-
   position: absolute;
-
   inset: 0;
-
   pointer-events: none;
-
   z-index: 6;
-
-  border:
-    1px solid rgba(76, 224, 255, .18);
-
-  box-shadow:
-    inset 0 0 25px rgba(76, 224, 255, .08),
-    inset 0 -35px 55px rgba(5, 7, 13, .2);
+  border: 1px solid rgba(76, 224, 255, .18);
+  box-shadow: inset 0 0 25px rgba(76, 224, 255, .08), inset 0 -35px 55px rgba(5, 7, 13, .18);
 }
 
 .media-corner {
   position: absolute;
-
   right: 8px;
   bottom: 7px;
-
   z-index: 8;
-
   padding: 3px 7px;
-
   font-family: "Space Mono", monospace;
-
   font-size: .48rem;
-
   letter-spacing: .12em;
-
   color: var(--cyan);
-
-  background:
-    rgba(5, 7, 13, .82);
-
-  border-left:
-    1px solid var(--cyan);
+  background: rgba(5, 7, 13, .82);
+  border-left: 1px solid var(--cyan);
 }
 
+.tv-badges {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 4px 0;
+}
 
-/* ============================================================
-   PLACEHOLDER / OFFLINE PIPELINE
-============================================================ */
+.tv-badges span {
+  font-family: "Space Mono", monospace;
+  font-size: .53rem;
+  letter-spacing: .08em;
+  color: var(--amber);
+}
+
+.tv-badges .rec { color: var(--red); }
+.tv-badges .rec::before { content: "● "; }
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.project-card {
+  min-width: 0;
+  min-height: 0;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: linear-gradient(145deg, rgba(11, 20, 32, .98), rgba(5, 10, 18, .98));
+  border: 1px solid var(--line);
+}
+
+.project-card .tv-screen { aspect-ratio: 16 / 9; }
+
+.project-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.project-card h3 {
+  margin: 7px 0 8px;
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(1rem, 1.45vw, 1.2rem);
+  line-height: 1.28;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.project-card p {
+  margin: 0 0 14px;
+  color: var(--ink);
+  line-height: 1.6;
+  font-size: .86rem;
+}
+
+.project-card .tags { margin-top: auto; }
+.project-card .project-links { margin-top: 13px; }
+
+.offline-link { color: var(--orange); border-color: var(--orange-dim); }
 
 .pipeline-screen {
   background:
-    radial-gradient(
-      circle at center,
-      rgba(76, 224, 255, .08),
-      transparent 42%
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent 0 40px,
-      rgba(76, 224, 255, .025) 41px 42px
-    ),
-    repeating-linear-gradient(
-      0deg,
-      transparent 0 40px,
-      rgba(76, 224, 255, .025) 41px 42px
-    ),
+    radial-gradient(circle at center, rgba(76, 224, 255, .08), transparent 42%),
+    repeating-linear-gradient(90deg, transparent 0 40px, rgba(76, 224, 255, .025) 41px 42px),
+    repeating-linear-gradient(0deg, transparent 0 40px, rgba(76, 224, 255, .025) 41px 42px),
     var(--bg-2);
 }
 
 .pipeline-placeholder {
   width: 100%;
   height: 100%;
-
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: center;
-
-  justify-content: center;
-
-  text-align: center;
-
   position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .pipeline-core {
-  width: 70px;
-  height: 70px;
-
-  border:
-    1px solid var(--cyan);
-
-  border-radius: 50%;
-
+  width: 58px;
+  height: 58px;
+  position: relative;
   display: flex;
-
   align-items: center;
   justify-content: center;
-
-  position: relative;
-
-  box-shadow:
-    0 0 25px rgba(76, 224, 255, .15);
+  border: 1px solid var(--cyan);
+  border-radius: 50%;
+  box-shadow: 0 0 25px rgba(76, 224, 255, .15);
 }
 
 .core-ring {
   position: absolute;
-
-  width: 48px;
-  height: 48px;
-
-  border:
-    1px dashed var(--orange);
-
+  width: 40px;
+  height: 40px;
+  border: 1px dashed var(--orange);
   border-radius: 50%;
-
-  animation:
-    spin-slow 8s linear infinite;
+  animation: spin-slow 8s linear infinite;
 }
 
 .core-dot {
-  width: 9px;
-  height: 9px;
-
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-
   background: var(--cyan);
-
-  box-shadow:
-    0 0 12px var(--cyan);
+  box-shadow: 0 0 12px var(--cyan);
 }
 
 .pipeline-flow {
-  margin-top: 16px;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 15px;
+  max-width: 88%;
   font-family: "Space Mono", monospace;
-
-  font-size: .55rem;
-
-  letter-spacing: .12em;
-
+  font-size: .5rem;
+  letter-spacing: .08em;
   color: var(--cyan);
 }
 
-.pipeline-flow span {
-  color: var(--orange);
-
-  margin: 0 5px;
-}
+.pipeline-flow b { color: var(--orange); font-weight: 400; }
 
 .pipeline-placeholder small {
-  margin-top: 13px;
-
-  font-family: "Space Mono", monospace;
-
-  font-size: .48rem;
-
-  line-height: 1.8;
-
-  letter-spacing: .12em;
-
-  color: var(--ink);
-}
-
-
-/* ============================================================
-   MEDIA BADGES
-============================================================ */
-
-.tv-badges {
-  display: flex;
-
-  justify-content: space-between;
-
-  padding: 8px 4px 0;
-}
-
-.tv-badges span {
-  font-family: "Space Mono", monospace;
-
-  font-size: .56rem;
-
-  letter-spacing: .08em;
-
-  color: var(--amber);
-}
-
-.tv-badges .rec {
-  color: var(--red);
-}
-
-.tv-badges .rec::before {
-  content: "● ";
-}
-
-
-/* ============================================================
-   PROJECT GRID
-============================================================ */
-
-.project-grid {
-  display: grid;
-
-  grid-template-columns:
-    1fr
-    1fr;
-
-  gap: 22px;
-
-  margin-top: 22px;
-}
-
-.project-card {
-  min-height: 360px;
-
-  background: var(--panel);
-
-  border:
-    1px solid var(--line);
-
-  padding: 24px;
-
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 16px;
-}
-
-.project-card .tv-screen {
-  aspect-ratio: 16 / 9;
-}
-
-.project-card-body {
-  display: flex;
-
-  flex-direction: column;
-
-  flex: 1;
-}
-
-.project-card h3 {
-  font-family: "Orbitron", sans-serif;
-
-  font-size: 1.15rem;
-
-  line-height: 1.3;
-
-  margin: 4px 0 8px;
-
-  font-weight: 700;
-
-  color: var(--white);
-}
-
-.project-card p {
-  margin: 0 0 14px;
-
-  color: var(--ink);
-}
-
-.project-card .tags {
-  margin-top: auto;
-}
-
-.project-card .project-links {
   margin-top: 12px;
+  font-family: "Space Mono", monospace;
+  font-size: .45rem;
+  line-height: 1.8;
+  letter-spacing: .12em;
+  color: var(--ink);
 }
-
-.offline-link {
-  color: var(--orange);
-
-  border-color:
-    var(--orange-dim);
-}
-
 
 /* ============================================================
    SKILLS
@@ -1809,6 +1609,19 @@ button {
    MOBILE
 ============================================================ */
 
+@media (max-width: 1050px) and (min-width: 851px) {
+
+  .project-feature {
+    grid-template-columns: minmax(0, 1fr) minmax(330px, .85fr);
+    gap: 30px;
+    padding: 36px;
+  }
+
+  .project-content h3 { font-size: 1.75rem; }
+  .project-content > p:not(.project-kicker) { font-size: .92rem; }
+}
+
+
 @media (max-width: 850px) {
 
   .container {
@@ -1952,19 +1765,22 @@ button {
 
   .project-feature {
     grid-template-columns: 1fr;
-
-    padding: 28px 22px;
-
+    gap: 28px;
+    padding: 32px 24px 26px;
     min-height: auto;
   }
 
-  .project-index {
-    display: none;
+  .project-feature-index {
+    position: static;
+    margin-bottom: -12px;
+  }
+
+  .project-content {
+    padding-left: 0;
+    max-width: none;
   }
 
   .project-feature .tv-frame {
-    max-width: 100%;
-
     width: 100%;
   }
 
