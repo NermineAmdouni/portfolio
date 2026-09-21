@@ -198,9 +198,9 @@
             <article class="timeline-item reveal">
               <div class="timeline-date">02/2025 — 07/2025</div>
               <div class="timeline-main">
-                <p class="role">Data Consulting Intern</p>
+                <p class="role">Final-Year Engineering Thesis (PFE) — Data Consulting Intern</p>
                 <h3>EY AMC</h3>
-                <p>Built a real-time ASR → MT → TTS pipeline across three languages using Whisper and MarianMT, bringing translation latency below five seconds for live multilingual demos.</p>
+                <p>Built a real-time ASR → MT → TTS pipeline across three languages using Whisper and MarianMT, bringing translation latency below five seconds for live multilingual demos. See the full project breakdown below.</p>
                 <div class="tags"><span>Python</span><span>Flask</span><span>LangChain</span><span>Whisper</span><span>MarianMT</span><span>OpenAI API</span></div>
               </div>
             </article>
@@ -238,72 +238,117 @@
             </div>
           </div>
 
-          <!-- Featured project: HUD screen with screenshot/video slot.
-               Drop a file at assets/projects/pmbok-chatbot.jpg (or .mp4) and
-               swap the placeholder <div class="tv-placeholder"> below for
-               <img src="assets/projects/pmbok-chatbot.jpg" alt="PMBOK chatbot screenshot">
-               or a <video> tag with controls. -->
+          <!-- Featured project: HUD readout panel with quantified results (no screenshots/demos). -->
           <div class="project-grid">
-            <!-- Drop assets/projects/speech-translation.jpg or .mp4 and swap the placeholder -->
 
-            
           <div class="project-feature hud-frame reveal">
             <div class="project-index">01</div>
             <div class="project-content">
-              <p class="project-kicker">ACADEMIC PROJECT // FILE_01</p>
-              <h3>PMBOK Knowledge Graph<br>& Chatbot</h3>
+              <p class="project-kicker">RESEARCH PROJECT // FILE_01</p>
+              <h3>PMBOK Knowledge Graph<br>&amp; RAG Chatbot</h3>
               <p>
-                Mapped project-management concepts into a Neo4j knowledge graph and implemented a LangChain RAG system for contextual question answering through a web application.
+                Compared 3 NLP normalization methods and 2 knowledge-graph construction approaches — a rule-based spaCy pipeline versus LLM-based extraction — to identify the higher-fidelity way of turning the 200+ page PMBOK Guide into structured, queryable knowledge.
               </p>
-              <div class="tags"><span>Neo4j</span><span>LangChain</span><span>RAG</span><span>Python</span></div>
+              <p>
+                Built the resulting Neo4j graph, then layered a RAG chatbot on top using HuggingFace embeddings, Llama-3.2-90B and LangChain, evaluating retrieval relevance and answer faithfulness. Figure-to-text extraction via LlamaParse, LlamaIndex, PyMuPDF and OpenCV preserved multimodal information a text-only pipeline would otherwise have lost.
+              </p>
+              <div class="tags"><span>Neo4j</span><span>LangChain</span><span>RAG</span><span>LLM Evaluation</span><span>PyMuPDF</span><span>OpenCV</span></div>
               <div class="project-links">
-                <a class="project-link" href="https://drive.google.com/file/d/1i4oKjmr3JyhLxszgpDQXjKuJ37aEcY0W/view?usp=sharing" target="_blank" rel="noopener"> Watch Demo ↗</a>
+                <span class="project-note">6-person team · Independent research project · Report &amp; graph schema available on request</span>
               </div>
             </div>
-            <div class="tv-frame">
-              <div class="tv-screen scanlines">
-                <img src="assets/projects/pmbok.png" alt="PMBOT chatbot interface answering a project-management question">
+            <div class="readout-panel">
+              <div class="readout-top"><span>ANALYSIS</span><span>STATUS: EVALUATED</span></div>
+              <div class="stat-grid">
+                <div class="stat-cell"><small>GRAPH NODES</small><strong>597</strong></div>
+                <div class="stat-cell"><small>RELATIONSHIPS</small><strong>1,251</strong></div>
+                <div class="stat-cell"><small>SOURCE PAGES</small><strong>200+</strong></div>
+                <div class="stat-cell"><small>NORM. METHODS TESTED</small><strong>3</strong></div>
               </div>
-              <div class="tv-badges"><span class="rec">REC</span><span>STATUS: DEPLOYED</span></div>
             </div>
           </div>
-            
+
             <article class="project-card hud-frame reveal">
-              <div class="tv-frame">
-                <div class="tv-screen scanlines">
-                  <video src="assets/projects/realtime-translation.mp4" controls preload="metadata"></video>
+              <div class="readout-panel">
+                <div class="readout-top"><span>FILE_02</span><span>GRADE 16.1/20</span></div>
+                <div class="stat-grid">
+                  <div class="stat-cell"><small>MODELS EVALUATED</small><strong>20+</strong></div>
+                  <div class="stat-cell"><small>END-TO-END LATENCY</small><strong>3.5s</strong></div>
+                  <div class="stat-cell"><small>LANGUAGES</small><strong>3</strong></div>
+                  <div class="stat-cell"><small>HOST</small><strong>EY AMC</strong></div>
                 </div>
-                <div class="tv-badges"><span class="rec">REC</span><span>FILE_02</span></div>
               </div>
               <div class="project-card-body">
-                <div class="card-top"><span>02</span><span>AI / NLP</span></div>
+                <div class="card-top"><span>02</span><span>FINAL-YEAR THESIS (PFE)</span></div>
                 <h3>Real-Time Multilingual Speech Translation</h3>
-                <p>Speech recognition, machine translation and multilingual output combined into a live client-demo pipeline.</p>
-                <div class="tags"><span>Whisper</span><span>MarianMT</span><span>Flask</span></div>
+                <p>Comparatively evaluated 20+ speech-to-text, translation and text-to-speech models to select Faster Whisper and MarianMT on latency/accuracy trade-offs, then built a multi-threaded Flask/WebRTC pipeline with GPT-4-based correction, live transcription and PDF/MP3 export — validated under real-time load with an automated pytest suite.</p>
+                <div class="tags"><span>Faster Whisper</span><span>MarianMT</span><span>Flask</span><span>WebRTC</span><span>GPT-4</span><span>pytest</span></div>
                 <div class="project-links">
                   <a class="project-link" href="https://github.com/NermineAmdouni/translator-app" target="_blank" rel="noopener">GitHub ↗</a>
+                  <span class="project-note">Final-year thesis · full report on request</span>
                 </div>
               </div>
             </article>
-            
-            <!-- Drop assets/projects/ocr-extraction.jpg or .mp4 and swap the placeholder -->
+
             <article class="project-card hud-frame reveal">
-              <div class="tv-frame">
-                <div class="tv-screen scanlines">
-                  <div class="tv-placeholder">
-                    <div class="play">▶</div>
-                    <small>SCREENSHOT / DEMO<br>COMING SOON</small>
-                  </div>
+              <div class="readout-panel">
+                <div class="readout-top"><span>FILE_03</span><span>CRISP-DM</span></div>
+                <div class="stat-grid">
+                  <div class="stat-cell"><small>CLASSIFICATION ACC.</small><strong>86.4%</strong></div>
+                  <div class="stat-cell"><small>CLASSIFIERS TESTED</small><strong>6</strong></div>
+                  <div class="stat-cell"><small>CLUSTERING ALGOS</small><strong>4</strong></div>
+                  <div class="stat-cell"><small>TEAM SIZE</small><strong>4</strong></div>
                 </div>
-                <div class="tv-badges"><span class="rec">REC</span><span>FILE_03</span></div>
               </div>
               <div class="project-card-body">
-                <div class="card-top"><span>03</span><span>OCR / LLM</span></div>
+                <div class="card-top"><span>03</span><span>ML / SECURITY</span></div>
+                <h3>Network Intrusion &amp; Anomaly Detection</h3>
+                <p>Two-part comparative study on the NSL-KDD network-security benchmark, run end to end with the CRISP-DM methodology. Benchmarked 6 classifiers (Decision Tree, Random Forest, KNN, SVM, Logistic Regression, AdaBoost) with GridSearchCV tuning for 5-class attack classification, then compared 4 clustering algorithms — KMeans, DBSCAN, GMM, Hierarchical Agglomerative — by Silhouette Score for unsupervised anomaly detection, selecting GMM as the best-performing unsupervised model.</p>
+                <div class="tags"><span>scikit-learn</span><span>GridSearchCV</span><span>Clustering</span><span>CRISP-DM</span></div>
+                <div class="project-links">
+                  <span class="project-note">4-member team · Jan 2024 · report available on request</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card hud-frame reveal">
+              <div class="readout-panel">
+                <div class="readout-top"><span>FILE_04</span><span>CLIENT PROJECT</span></div>
+                <div class="stat-grid">
+                  <div class="stat-cell"><small>RECORDS EXTRACTED</small><strong>1,577</strong></div>
+                  <div class="stat-cell"><small>SOURCE DOCUMENTS</small><strong>25+</strong></div>
+                  <div class="stat-cell"><small>MODEL</small><strong>Mistral 7B</strong></div>
+                  <div class="stat-cell"><small>DATABASE</small><strong>MongoDB</strong></div>
+                </div>
+              </div>
+              <div class="project-card-body">
+                <div class="card-top"><span>04</span><span>OCR / LLM</span></div>
                 <h3>Structured Data Extraction</h3>
-                <p>OCR + Mistral 7B workflow for extracting structured information from multilingual traffic-violation images.</p>
+                <p>Integrated a Mistral 7B LLM into a full-stack application to automate structured extraction from multilingual traffic-violation documents, designing the data-cleaning and annotation pipeline used to train and refine the extraction model.</p>
                 <div class="tags"><span>Mistral 7B</span><span>OCR</span><span>MongoDB</span></div>
                 <div class="project-links">
-                  <a class="project-link" href="#" target="_blank" rel="noopener">GitHub ↗</a>
+                  <span class="project-note">Academic collaboration · Swiss Premium Negoce · proprietary codebase</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card hud-frame reveal">
+              <div class="readout-panel">
+                <div class="readout-top"><span>FILE_05</span><span>IN PROGRESS</span></div>
+                <div class="stat-grid">
+                  <div class="stat-cell"><small>OBJECT CLASSES</small><strong>10</strong></div>
+                  <div class="stat-cell"><small>LABELED OBJECTS</small><strong>3,896</strong></div>
+                  <div class="stat-cell"><small>ARCHITECTURES</small><strong>2</strong></div>
+                  <div class="stat-cell"><small>TEAM SIZE</small><strong>4</strong></div>
+                </div>
+              </div>
+              <div class="project-card-body">
+                <div class="card-top"><span>05</span><span>COMPUTER VISION</span></div>
+                <h3>Satellite Imagery Object Detection</h3>
+                <p>Built a data pipeline on the NWPU VHR-10 aerial-imagery benchmark — parsing raw coordinate annotations into a class-balanced train/test split across 10 categories (aircraft, ships, storage tanks, sports fields, harbors, bridges, vehicles) — and custom PyTorch Dataset/DataLoader classes with RLE mask decoding. Fine-tuned and compared two COCO-pretrained detection architectures, Mask R-CNN and Faster R-CNN, with an mAP-based evaluation pipeline. Deep-learning coursework; training and evaluation are still ongoing.</p>
+                <div class="tags"><span>PyTorch</span><span>Mask R-CNN</span><span>Faster R-CNN</span><span>Object Detection</span></div>
+                <div class="project-links">
+                  <span class="project-note">4-person team · deep learning coursework, 2024 · code available on request</span>
                 </div>
               </div>
             </article>
