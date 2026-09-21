@@ -568,7 +568,7 @@ button { font: inherit; }
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 22px;
   margin-top: 22px;
 }
@@ -581,6 +581,7 @@ button { font: inherit; }
   flex-direction: column;
   gap: 16px;
 }
+.project-card .tv-frame { padding: 4px; }
 .project-card .readout-panel { padding: 14px; gap: 10px; }
 .project-card .readout-panel .stat-cell strong { font-size: 1rem; }
 .project-card-body { display: flex; flex-direction: column; flex: 1; }
@@ -821,7 +822,7 @@ button { font: inherit; }
   .project-feature { grid-template-columns: 1fr; padding: 28px 22px; min-height: auto; }
   .project-index { display: none; }
   .project-feature .readout-panel { max-width: 320px; }
-  .skills-grid, .mod-rack { grid-template-columns: 1fr; }
+  .skills-grid, .project-grid, .mod-rack { grid-template-columns: 1fr; }
   .footer-inner { padding: 20px 0; flex-direction: column; align-items: flex-start; }
 }
 
