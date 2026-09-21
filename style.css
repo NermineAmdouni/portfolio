@@ -523,9 +523,52 @@ button { font: inherit; }
 .tv-badges .rec { color: var(--red); }
 .tv-badges .rec::before { content: "● "; }
 
+/* HUD readout panel — quantified results, no screenshots/demos required */
+.readout-panel {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.readout-top {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Space Mono", monospace;
+  font-size: .66rem;
+  letter-spacing: .08em;
+  color: var(--amber);
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line-soft);
+}
+.stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.stat-cell { border: 1px solid var(--line-soft); padding: 10px 12px; }
+.stat-cell small {
+  display: block;
+  font-family: "Space Mono", monospace;
+  font-size: .6rem;
+  letter-spacing: .05em;
+  color: var(--ink);
+  margin-bottom: 5px;
+}
+.stat-cell strong {
+  display: block;
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.1rem;
+  color: var(--cyan);
+  font-weight: 700;
+}
+.project-note {
+  font-family: "Space Mono", monospace;
+  font-size: .72rem;
+  letter-spacing: .02em;
+  color: var(--ink);
+}
+
 .project-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 22px;
   margin-top: 22px;
 }
@@ -538,7 +581,8 @@ button { font: inherit; }
   flex-direction: column;
   gap: 16px;
 }
-.project-card .tv-frame { padding: 4px; }
+.project-card .readout-panel { padding: 14px; gap: 10px; }
+.project-card .readout-panel .stat-cell strong { font-size: 1rem; }
 .project-card-body { display: flex; flex-direction: column; flex: 1; }
 .project-card h3 {
   font-family: "Orbitron", sans-serif;
@@ -551,7 +595,7 @@ button { font: inherit; }
 }
 .project-card p { margin: 0 0 14px; color: var(--ink); font-size: .95rem; }
 .project-card .tags { margin-top: auto; }
-.project-card .project-links { margin-top: 12px; }
+.project-card .project-links { margin-top: 12px; display: flex; flex-wrap: wrap; align-items: center; gap: 18px; }
 
 /* ---------- SKILLS (system modules) ---------- */
 .skills-grid {
@@ -776,8 +820,8 @@ button { font: inherit; }
   .timeline-item { grid-template-columns: 1fr; gap: 15px; }
   .project-feature { grid-template-columns: 1fr; padding: 28px 22px; min-height: auto; }
   .project-index { display: none; }
-  .project-feature .tv-frame { max-width: 320px; }
-  .skills-grid, .project-grid, .mod-rack { grid-template-columns: 1fr; }
+  .project-feature .readout-panel { max-width: 320px; }
+  .skills-grid, .mod-rack { grid-template-columns: 1fr; }
   .footer-inner { padding: 20px 0; flex-direction: column; align-items: flex-start; }
 }
 
